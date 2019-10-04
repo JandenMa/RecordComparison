@@ -1,0 +1,55 @@
+{
+  "name": "record-comparison",
+  "version": "0.1.0",
+  "description": "A javascript tool to compare array quickly and you can do something when matching",
+  "license": "MIT",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": {
+    "name": "Janden Ma",
+    "url": "https://github.com/JandenMa",
+    "email": "Mazdam2208@live.com"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    ".gitignore",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "check-equal": "^1.0.6",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "dev": "webpack --mode development --module-bind js=babel-loader",
+    "build": "webpack --config webpack.config.js --progress --colors"
+  },
+  "keywords": [
+    "js",
+    "array",
+    "compare",
+    "comparison",
+    "javascript"
+  ]
+}

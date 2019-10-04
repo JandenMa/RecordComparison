@@ -10,7 +10,7 @@
 
 ### Version Change Logs
 
-- **Build20191004:** First publish. Beta (0.1.0)
+- **Build20191004:** First beta version published.
 
 
 

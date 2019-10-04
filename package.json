@@ -1,6 +1,6 @@
 {
   "name": "record-comparison",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A javascript tool to compare array quickly and you can do something when matching",
   "license": "MIT",
   "main": "index.js",

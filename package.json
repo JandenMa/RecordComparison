@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "A javascript tool to compare array quickly and you can do something when matching",
   "license": "MIT",
-  "private": true,
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -12,6 +11,15 @@
     "name": "Janden Ma",
     "url": "https://github.com/JandenMa",
     "email": "Mazdam2208@live.com"
+  },
+  "homepage": "https://jandenma.github.io/RecordComparison/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JandenMa/RecordComparison"
+  },
+  "bugs": {
+    "url": "https://github.com/JandenMa/RecordComparison/issues",
+    "email": "516113525@qq.com"
   },
   "files": [
     "index.js",

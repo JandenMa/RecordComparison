@@ -20,9 +20,9 @@ If you use this tool to compare arrays, you need to specify one of those as the 
 
 When you call `compare()` function, this tool will generate a master pointer for master array and detail pointer for detail array. 
 
-If master item and detail item have finished matching, you need to call `detailMoveNext()`  to move master pointer to next master item for next comparison.
+If master item and detail item have finished matching, you need to call `detailMoveNext()`  to move detail pointer to next detail item for next comparison.
 
-If master item and detail item can't matched, you need to call `masterMoveNext()`  to move detail pointer to next detail item for next comparison.
+If master item and detail item can't matched, you need to call `masterMoveNext()`  to move master pointer to next master item for next comparison.
 
 
 

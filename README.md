@@ -8,6 +8,8 @@
 
 
 
+[中文文档（Simplified Chinese）](https://github.com/JandenMa/RecordComparison/blob/master/README_zh.md)
+
 ### Version Change Logs
 
 - **Build20191004:** First beta version published.
@@ -177,7 +179,7 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
      - The detail array, as references when comparing
      - Type: 
        - Single comparison: `Array<object>`
-       - Multiple comparison: ` Array<Array<object>>`
+       - Multiple comparison: `Array<Array<object>>`
 
 3. API
 
@@ -188,7 +190,7 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
      - get the detail array
      - Type: 
        - Single comparison: `Array<object>`
-       - Multiple comparison: ` Array<Array<object>>`
+       - Multiple comparison: `Array<Array<object>>`
    - currentRow
      - get the current item in master array
      - Type: `object`
@@ -211,7 +213,7 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
      - `field` is the field name
      - `order` is the ordering rule, default  `'ASC'` for `ascending` 
    - masterEof
-     - if book mark is greater than the length of master array, return `false`
+     - if book mark is greater than the length of master array, return `false` that means finish comparing
      - Type: `boolean` 
    - isSorted
      - if you have sorted arrays in outer function, you should set it `true` to ensure the performance
@@ -223,10 +225,10 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
      - Returns
        - `True` for matching, or `False` 
    - getMasterBookMark()
-     - get the current book mark for master array
+     - get the current book mark for master array, that means the index of the master pointer right now (start from `0`).
      - Returns: `number`
    - getDetailBookMark()
-     - get the current book mark for detail array
+     - get the current book mark for detail array, that means the index of the detail pointer right now (start from `0`).
      - Returns: `number`
    - masterMoveNext()
      - if master item and detail item can't be matched, you need to move master pointer to next item

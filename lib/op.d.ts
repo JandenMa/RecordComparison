@@ -4,7 +4,7 @@
  * @param {object} item2
  * @param {Array<{name:string, order:'ASC'|'DESC'}>} props
  */
-function SortByProps(
+declare function SortByProps(
   item1: Array<object>,
   item2: Array<object>,
   props: Array<{ field: string; order?: 'ASC' | 'DESC' }>
@@ -32,4 +32,4 @@ export function Compare(
   detailItem: Array<object>,
   masterFields: Array<{ field: string; order?: 'ASC' | 'DESC' }>,
   detailFields: Array<{ field: string; order?: 'ASC' | 'DESC' }>
-): boolean
+): -1 | 0 | 1

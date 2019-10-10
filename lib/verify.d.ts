@@ -2,25 +2,25 @@
  * @description verify whether the value is an object
  * @param {object} value
  */
-function IsObj(value: object): boolean
+declare function IsObj(value: object): boolean
 
 /**
  * @description verify whether the value is an array
  * @param {Array<any>} value
  */
-function IsArr(value: Array<any>): boolean
+declare function IsArr(value: Array<any>): boolean
 
 /**
  * @description verify whether the value is an array
  * @param {Array<any>} value
  */
-function IsArray(value: Array<any>): boolean
+declare function IsArray(value: Array<any>): boolean
 
 /**
  * @description verify whether the value is an array of object
  * @param {Array<object>} value
  */
-function IsObjArray(value: Array<object>): boolean
+declare function IsObjArray(value: Array<object>): boolean
 
 /**
  * @description verify arguments

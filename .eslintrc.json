@@ -19,6 +19,10 @@
     "semi": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": "off",
+    "operator-linebreak": "off",
+    "class-methods-use-this": "off",
     "max-len": [
       "warn",
       {

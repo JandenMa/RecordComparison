@@ -8,7 +8,18 @@
 
 
 
+<!-- 你必须安装v0.1.5之后的版本，此前版本有严重Bug -->
+
+
+
 ### [English Documentation（英文文档）](https://github.com/JandenMa/RecordComparison/blob/master/README.md)
+
+
+
+### 版本更新说明
+
+- **Build20191004:** 第一个测试（beta）版
+- **Build20191010:** 修复致命Bug. (v0.1.5)
 
 
 
@@ -245,5 +256,5 @@
 
     - 当主数组单项和次数组单项无法比对，你需要调用此方法将主指针指向下一个主数组单项，为下一次比对做准备。
 - detailMoveNext()
+    
     - 当主数组单项和次数组单项完成比对，你需要调用此方法将次指针指向下一个次数组单项，为下一次比对做准备。
-  

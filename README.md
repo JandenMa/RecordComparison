@@ -8,11 +8,18 @@
 
 
 
+<!--You have to install the package which version is after v0.1.5-->
+
+
+
 [中文文档（Simplified Chinese）](https://github.com/JandenMa/RecordComparison/blob/master/README_zh.md)
+
+
 
 ### Version Change Logs
 
 - **Build20191004:** First beta version published.
+- **Build20191010:** Bug fixes. (v0.1.5)
 
 
 

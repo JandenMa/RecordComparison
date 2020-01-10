@@ -8,7 +8,7 @@
 
 
 
-<!--You have to install the package which version is after v0.2.0-->
+<!--You have to install the package which version is after v0.2.2-->
 
 
 
@@ -20,7 +20,7 @@
 
 - **Build20191004:** First beta version published.
 - **Build20191010:** Bug fixes. (v0.1.5)
-- **Build20200110:** Resolved issue on inner sorting logics. (v0.2.0)
+- **Build20200110:** Resolved issue on inner sorting logics. (v0.2.2)
 
 
 

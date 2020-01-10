@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Sort items of array by props
  * @param {object} item1
@@ -8,7 +9,7 @@ declare function SortByProps(
   item1: Array<object>,
   item2: Array<object>,
   props: Array<{ field: string; order?: 'ASC' | 'DESC' }>
-): Array<1 | 0 | -1>
+): Array<1 | 0 | -1>;
 
 /**
  * Sort Array
@@ -18,7 +19,7 @@ declare function SortByProps(
 export function Sort(
   arr: Array<object>,
   fields: Array<{ field: string; order?: 'ASC' | 'DESC' }>
-): Array<object>
+): Array<object>;
 
 /**
  * compare items of array
@@ -32,4 +33,4 @@ export function Compare(
   detailItem: Array<object>,
   masterFields: Array<{ field: string; order?: 'ASC' | 'DESC' }>,
   detailFields: Array<{ field: string; order?: 'ASC' | 'DESC' }>
-): -1 | 0 | 1
+): -1 | 0 | 1;

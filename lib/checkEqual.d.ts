@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 /**
  * @description sort the array
  * @param {Array<any>} arr the array which needs to be sorted
  * @author Janden Ma
  * @version 1.0.0
  */
-declare function sortArray(arr: Array<any>): Array<any>
+declare function sortArray(arr: Array<any>): Array<any>;
 
 /**
  * @description Check two Arrays are equal or not
@@ -14,7 +15,7 @@ declare function sortArray(arr: Array<any>): Array<any>
  * @author Janden Ma
  * @version 1.0.0
  */
-declare function checkArrayEqual(arrA, arrB): -1 | 0 | 1
+declare function checkArrayEqual(arrA, arrB): -1 | 0 | 1;
 
 /**
  * @description Check two Objects are equal or not
@@ -24,6 +25,6 @@ declare function checkArrayEqual(arrA, arrB): -1 | 0 | 1
  * @author Janden Ma
  * @version 1.0.0
  */
-declare function checkObjectEqual(objA, objB): -1 | 0 | 1
+declare function checkObjectEqual(objA, objB): -1 | 0 | 1;
 
-export default function checkEqual(objA: any, objB: any): -1 | 0 | 1
+export default function checkEqual(objA: any, objB: any): -1 | 0 | 1;

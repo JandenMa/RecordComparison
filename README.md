@@ -24,6 +24,7 @@
 - **Build20200119:** (v0.3.0)
   - Resolved the sorting issue when you never set the order parameter.
   - Added judgement to stop sorting when it has been sorted, to improve performances.
+- **Build20200416:** Skip comparing if master or detail is null, undefined or empty array. (v0.3.1)
 
 
 

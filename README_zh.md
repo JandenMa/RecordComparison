@@ -25,6 +25,7 @@
   - 修复未指定排序顺序时，排序异常的问题。
   - 增加判定，如果数组已经被内部排序过将不再执行排序，以提升性能。
 - **Build20200416:** 当master或者detail为null/undefined/空数组时，跳过比对。(v0.3.2)
+- **Build20210818:** 修复多项对比时次数组页签混乱的问题。(v0.3.3)
 
 
 
@@ -146,11 +147,11 @@
   while (rc.masterEof) {
     while (rc.compare(0)) {
       rc.currentRow["amount"] = rc.currentRow["amount"] + rc.detailRow["amount"];
-      rc.detailMoveNext();
+      rc.detailMoveNext(0);
     }
     while (rc.compare(1)) {
       rc.currentRow["amount"] = rc.currentRow["amount"] - rc.detailRow["amount"];
-      rc.detailMoveNext();
+      rc.detailMoveNext(1);
     }
     rc.masterMoveNext();
   }
@@ -201,65 +202,64 @@
 
     - 用于获取主数组
     - 类型： `Array<object>`
-- details
-  
-  - 用于获取次数组
-  
-  - 类型:
-  
-  - - 单一比对： `Array<object>`
+  - details
+    - 用于获取次数组
+    - 类型:
+      - 单一比对： `Array<object>`
       - 多项比对： `Array<Array<object>>`
+    
   - currentRow
 
     - 获取当前主数组指针所在项
-  - 类型： `object`
-  - detailRow
-  
-  - 获取当前次数组指针所在项，如果是多项比对，当前次数组指的是正在比对的那个次数组（按`compare()`的参数`index`算）
     - 类型： `object`
-- masterFields
-  
+  - detailRow
+
+    - 获取当前次数组指针所在项，如果是多项比对，当前次数组指的是正在比对的那个次数组（按`compare()`的参数`index`算）
+    - 类型： `object`
+  - masterFields
     - 作为主数组排序的字段集合，字段应该包含在主数组的项中，而且你需要手动设置它
-  - 类型： `Array<{ field: string, order?: 'ASC' | 'DESC' }> | null`
+      - 类型： `Array<{ field: string, order?: 'ASC' | 'DESC' }> | null`
     - `field`是字段名
-  - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
+    - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
   - detailFields
-  
+
     - 用于单一比对，作为次数组排序的字段集合，字段应该包含在次数组的项中，而且你需要手动设置它
     - 类型： `Array<{ field: string, order?: 'ASC' | 'DESC' }> | null`
-  - `field`是字段名
-    - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
-- detailFieldsArr
-  
+      - `field`是字段名
+      - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
+  - detailFieldsArr
     - 用于多项比对，作为次数组排序的字段集合，字段应该包含在次数组的项中，而且你需要手动设置它
-    - 类型： `Array<Array<{ field: string; order?: 'ASC' | 'DESC' }>> | null`
-    - `field`是字段名
-  - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
+      - 类型： `Array<Array<{ field: string; order?: 'ASC' | 'DESC' }>> | null`
+        - `field`是字段名
+        - `order`是排序规则, 默认`'ASC'`表示升序，必须大写
   - masterEof
 
     - 如果书签（book mark）大于主数组的长度，将返回`false`，则所有比对结束
     - 类型: `boolean`
   - isSorted
-  
-  - 如果你已经在外部函数完成数组排序，你需要将它设置为true来减少内部计算以确保性能
+
+    - 如果你已经在外部函数完成数组排序，你需要将它设置为true来减少内部计算以确保性能
   - compare(index?: number)
 
     - 比对的核心方法
     - 类型： `Function`
-  - 参数：
-      - index: `number`, 作为多项比对的次数组指定索引, 默认为`0`
-  - 返回值：`true`表示比对成功, 否则为`false`
+    - 参数：
+        - index: `number`, 作为多项比对的次数组指定索引, 默认为`0`
+    - 返回值：`true`表示比对成功, 否则为`false`
   - getMasterBookMark()
 
     - 获取主数组当前书签（book mark），即主指针所在位置（从0开始）
   - 返回值: `number`
-  - getDetailBookMark()
-  
+  - getDetailBookMark(index?: number)
+
     - 获取次数组当前书签（book mark），即次指针所在位置（从0开始）
+    - 参数：
+      - index: `number`, 作为多项比对的次数组指定索引, 默认为`0`
     - 返回值: `number`
   - masterMoveNext()
 
     - 当主数组单项和次数组单项无法比对，你需要调用此方法将主指针指向下一个主数组单项，为下一次比对做准备。
-- detailMoveNext()
-  
-    - 当主数组单项和次数组单项完成比对，你需要调用此方法将次指针指向下一个次数组单项，为下一次比对做准备。
+  - detailMoveNext(index?: number)
+      - 当主数组单项和次数组单项完成比对，你需要调用此方法将次指针指向下一个次数组单项，为下一次比对做准备。
+      - 参数：
+          - index: `number`, 作为多项比对的次数组指定索引, 默认为`0`

@@ -25,6 +25,7 @@
   - Resolved the sorting issue when you never set the order parameter.
   - Added judgement to stop sorting when it has been sorted, to improve performances.
 - **Build20200416:** Skip comparing if master or detail is null, undefined or empty array. (v0.3.2)
+- **Build20210818:** Fixed: if multiple comparison then the `detailBookMark` would be messed. (v0.3.3)
 
 
 
@@ -146,11 +147,11 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
   while (rc.masterEof) {
     while (rc.compare(0)) {
       rc.currentRow["amount"] = rc.currentRow["amount"] + rc.detailRow["amount"];
-      rc.detailMoveNext();
+      rc.detailMoveNext(0);
     }
     while (rc.compare(1)) {
       rc.currentRow["amount"] = rc.currentRow["amount"] - rc.detailRow["amount"];
-      rc.detailMoveNext();
+      rc.detailMoveNext(1);
     }
     rc.masterMoveNext();
   }
@@ -239,11 +240,15 @@ If master item and detail item can't matched, you need to call `masterMoveNext()
    - getMasterBookMark()
      - get the current book mark for master array, that means the index of the master pointer right now (start from `0`).
      - Returns: `number`
-   - getDetailBookMark()
+   - getDetailBookMark(index?: number)
      - get the current book mark for detail array, that means the index of the detail pointer right now (start from `0`).
+     - Parameter:
+       - index: `number`, for multiple comparison, default `0`
      - Returns: `number`
    - masterMoveNext()
      - if master item and detail item can't be matched, you need to move master pointer to next item
-   - detailMoveNext()
+   - detailMoveNext(index?: number)
      - if master item and detail item have finished matching, you need to move detail pointer to next item for next comparison
+     - Parameter:
+       - index: `number`, for multiple comparison, default `0`
 

@@ -12,6 +12,14 @@
 
 
 
+## Warning
+
+This package is now EOL, you can continue to use it but maybe no more support or maintenance. 
+
+Well, don't worry, you can migrate to **[@rinxun/record-comparison](https://www.npmjs.com/package/@rinxun/record-comparison)** seamlessly, and the new package is more friendly with TypeScript.
+
+
+
 [中文文档（Simplified Chinese）](https://github.com/JandenMa/RecordComparison/blob/master/README_zh.md)
 
 

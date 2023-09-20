@@ -10,6 +10,12 @@
 
 <!-- 你必须安装v0.3.0之后的版本，此前版本有严重Bug -->
 
+## 警告
+
+这个NPM包已经停止维护了，但您可以继续使用它。
+
+当然，不用担心，您可以无缝迁移到 **[@rinxun/record-comparison](https://www.npmjs.com/package/@rinxun/record-comparison)** ，新的NPM包对TypeScript更加友好。
+
 
 
 ### [English Documentation（英文文档）](https://github.com/JandenMa/RecordComparison/blob/master/README.md)
